@@ -1,0 +1,17 @@
+/*CREATE USER 'bookstore_admin'@'localhost' IDENTIFIED BY 'Admin@1234';
+GRANT ALL PRIVILEGES ON BookStore.* TO 'bookstore_admin'@'localhost';*/
+/*CREATE USER 'bookstore_manager'@'localhost' IDENTIFIED BY 'Manager@1234';
+GRANT SELECT, INSERT, UPDATE, DELETE ON BookStore.* TO 'bookstore_manager'@'localhost';*/
+-- Create manager user
+CREATE USER 'bookstore_manager'@'localhost' IDENTIFIED BY 'Manager@1234';
+GRANT SELECT, INSERT, UPDATE, DELETE ON BookStore.* TO 'bookstore_manager'@'localhost';
+
+-- Create customer service user
+CREATE USER 'bookstore_cs'@'localhost' IDENTIFIED BY 'CS@1234';
+GRANT SELECT ON BookStore.* TO 'bookstore_cs'@'localhost';
+GRANT INSERT, UPDATE ON BookStore.cust_order TO 'bookstore_cs'@'localhost';
+GRANT INSERT, UPDATE ON BookStore.order_history TO 'bookstore_cs'@'localhost';
+
+-- Create reporting user
+CREATE USER 'bookstore_reporting'@'localhost' IDENTIFIED BY 'Reporting@1234';
+GRANT SELECT ON BookStore.* TO 'bookstore_reporting'@'localhost';
