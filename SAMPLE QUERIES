@@ -1,0 +1,32 @@
+-- Get all books with their authors
+SELECT b.title, GROUP_CONCAT(a.author_name SEPARATOR ', ') AS authors
+FROM book b
+JOIN book_author ba ON b.book_id = ba.book_id
+JOIN author a ON ba.author_id = a.author_id
+GROUP BY b.title;
+
+-- Get customer orders with details
+SELECT 
+    c.first_name, c.last_name, 
+    o.order_id, o.order_date,
+    COUNT(ol.line_id) AS item_count,
+    SUM(ol.price * ol.quantity) AS subtotal,
+    sm.method_name AS shipping_method,
+    sm.cost AS shipping_cost,
+    (SUM(ol.price * ol.quantity) + sm.cost) AS total
+FROM customer c
+JOIN cust_order o ON c.customer_id = o.customer_id
+JOIN order_line ol ON o.order_id = ol.order_id
+JOIN shipping_method sm ON o.shipping_method_id = sm.method_id
+GROUP BY o.order_id;
+
+-- Check inventory levels
+SELECT 
+    b.title, 
+    b.stock_quantity,
+    GROUP_CONCAT(a.author_name SEPARATOR ', ') AS authors
+FROM book b
+JOIN book_author ba ON b.book_id = ba.book_id
+JOIN author a ON ba.author_id = a.author_id
+GROUP BY b.book_id
+ORDER BY b.stock_quantity ASC;
