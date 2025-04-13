@@ -1,0 +1,40 @@
+/*INSERT INTO book_language (language_code, language_name) VALUES 
+('en', 'English'), ('fr', 'French'), ('es', 'Spanish'), ('de', 'German');*/
+
+/*Insert sample publishers
+INSERT INTO publisher (publisher_name) VALUES 
+('Penguin Random House'), ('HarperCollins'), ('Simon & Schuster'), ('Macmillan');*/
+
+/*Insert sample authors
+INSERT INTO author (author_name) VALUES 
+('J.K. Rowling'), ('George R.R. Martin'), ('Stephen King'), ('Agatha Christie');*/
+
+/*INSERT INTO book (title, isbn13, language_id, num_pages, publication_date, publisher_id, price, stock_quantity) VALUES 
+('Harry Potter and the Philosopher''s Stone', '9780747532743', 1, 223, '1997-06-26', 1, 12.99, 50),
+('A Game of Thrones', '9780553103540', 1, 694, '1996-08-01', 2, 15.99, 30),
+('The Shining', '9780307743657', 1, 447, '1977-01-28', 3, 9.99, 25),
+('Murder on the Orient Express', '9780007119318', 1, 256, '1934-01-01', 4, 8.99, 40);*/
+/*INSERT INTO book_author VALUES (1, 1), (2, 2), (3, 3), (4, 4);*/
+
+/*-- Insert countries
+INSERT INTO country (country_name) VALUES 
+('United States'), ('United Kingdom'), ('France'), ('Germany');*/
+/*INSERT INTO address_status (status_name) VALUES 
+('Current'), ('Previous'), ('Billing'), ('Shipping');*/
+/*INSERT INTO order_status (status_name) VALUES 
+('Pending'), ('Processing'), ('Shipped'), ('Delivered'), ('Cancelled');*/
+/*INSERT INTO shipping_method (method_name, cost) VALUES 
+('Standard Shipping', 4.99), ('Express Shipping', 9.99), ('Overnight Shipping', 19.99);*/
+/*INSERT INTO customer (first_name, last_name, email, phone, password_hash) VALUES 
+('John', 'Doe', 'john.doe@example.com', '1234567890', SHA2('password123', 256)),
+('Jane', 'Smith', 'jane.smith@example.com', '0987654321', SHA2('securepass', 256));*/
+/*INSERT INTO address (street_number, street_name, city, country_id, postal_code) VALUES 
+('123', 'Main St', 'New York', 1, '10001'),
+('456', 'Oak Ave', 'London', 2, 'SW1A 1AA');*/
+/*INSERT INTO customer_address VALUES (1, 1, 1), (2, 2, 1);*/
+/*INSERT INTO cust_order (customer_id, shipping_method_id, dest_address_id) VALUES 
+(1, 1, 1), (2, 2, 2);*/
+/* INTO order_line (order_id, book_id, quantity, price) VALUES 
+(1, 1, 1, 12.99), (1, 3, 2, 9.99), (2, 2, 1, 15.99), (2, 4, 1, 8.99);*/
+/*INSERT INTO order_history (order_id, status_id) VALUES 
+(1, 1), (1, 2), (2, 1);*/
